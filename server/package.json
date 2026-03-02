@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "This is the backend for the knovator assigment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karandabre19/Knovator-assignment.git"
+  },
+  "author": "Karan dabare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Karandabre19/Knovator-assignment/issues"
+  },
+  "homepage": "https://github.com/Karandabre19/Knovator-assignment#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
