@@ -4,6 +4,8 @@
   "description": "This is the backend for the knovator assigment",
   "main": "server.js",
   "scripts": {
+    "dev": "tsx watch server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +19,14 @@
   },
   "homepage": "https://github.com/Karandabre19/Knovator-assignment#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "bullmq": "^5.70.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "ioredis": "^5.10.0",
+    "mongoose": "^9.2.3",
+    "morgan": "^1.10.1",
+    "node-cron": "^4.2.1",
+    "xml2js": "^0.6.2"
   }
 }
