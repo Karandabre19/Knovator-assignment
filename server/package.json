@@ -19,14 +19,18 @@
   },
   "homepage": "https://github.com/Karandabre19/Knovator-assignment#readme",
   "dependencies": {
+    "axios": "^1.13.6",
     "bullmq": "^5.70.1",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "ioredis": "^5.10.0",
+    "mongodb": "^7.1.0",
     "mongoose": "^9.2.3",
     "morgan": "^1.10.1",
     "node-cron": "^4.2.1",
+    "tex": "^1.0.2",
+    "tsx": "^4.21.0",
     "xml2js": "^0.6.2"
   }
 }
