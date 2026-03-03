@@ -3,9 +3,15 @@ const xml2js = require("xml2js");
 
 async function fetchAndParseJobs(url) {
   const response = await axios.get(url);
-  const parser = new xml2js.Parser({ explicitArray: false });
+  const parser = new xml2js.Parser({
+    explicitArray: false,
+    mergeAttrs: true,
+    trim: true,
+    strict: false,
+  });
 
   const result = await parser.parseStringPromise(response.data);
+  console.log(JSON.stringify(result, null, 2));
 
   const items = result.rss.channel.item;
 

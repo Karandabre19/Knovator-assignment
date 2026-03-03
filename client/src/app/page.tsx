@@ -60,7 +60,7 @@ export default function ImportHistoryPage() {
         </Button>
       </div>
 
-      <div className=" overflow-hidden border-2 rounded-xl border-violet-500  pt-3 pb-3">
+      <div className=" overflow-hidden border-2 rounded-xl border-violet-500  pt-3 pb-1">
         <Table>
           <TableHeader>
             <TableRow className="text-xl pr-4 pl-4">

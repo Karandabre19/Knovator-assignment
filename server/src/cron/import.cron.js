@@ -15,10 +15,10 @@ cron.schedule("0 * * * *", async () => {
     const jobs = await fetchAndParseJobs(url);
     const batchSize = parseInt(process.env.BATCH_SIZE) || 1000;
     const totalBatches = Math.ceil(jobs.length / batchSize);
-    
+
     // Create ImportRun record
     const runId = `run_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    
+
     await ImportRun.create({
       runId,
       source: url,
