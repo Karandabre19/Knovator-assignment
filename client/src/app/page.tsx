@@ -49,37 +49,47 @@ export default function ImportHistoryPage() {
   return (
     <div className="p-8 space-y-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Job Import History</h1>
+        <h1 className=" flex items-center text- gap-2 font-bold">
+          <span className="text-3xl">Admin</span>
+          <span className="text-3xl">|</span>
+          <span className="text-xl">Job Importing Dashboard</span>
+        </h1>
         <Button onClick={triggerImport} disabled={loading}>
           {loading ? <Spinner /> : null}
           <span className="">Trigger Import</span>
         </Button>
       </div>
 
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Source</TableHead>
-            <TableHead>Total</TableHead>
-            <TableHead>New</TableHead>
-            <TableHead>Updated</TableHead>
-            <TableHead>Failed</TableHead>
-            <TableHead>Time</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {logs.map((log: importLog) => (
-            <TableRow key={log._id}>
-              <TableCell>{log.fileName}</TableCell>
-              <TableCell>{log.totalFetched}</TableCell>
-              <TableCell className="text-green-600">{log.newJobs}</TableCell>
-              <TableCell className="text-blue-600">{log.updatedJobs}</TableCell>
-              <TableCell className="text-red-600">{log.failedJobs}</TableCell>
-              <TableCell>{new Date(log.createdAt).toLocaleString()}</TableCell>
+      <div className=" overflow-hidden border-2 rounded-xl border-violet-500  pt-3 pb-3">
+        <Table>
+          <TableHeader>
+            <TableRow className="text-xl pr-4 pl-4">
+              <TableHead>Source</TableHead>
+              <TableHead>Total</TableHead>
+              <TableHead>New</TableHead>
+              <TableHead>Updated</TableHead>
+              <TableHead>Failed</TableHead>
+              <TableHead>Time</TableHead>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+          </TableHeader>
+          <TableBody>
+            {logs.map((log: importLog) => (
+              <TableRow key={log._id} className="pr-2 pl-2">
+                <TableCell>{log.fileName}</TableCell>
+                <TableCell>{log.totalFetched}</TableCell>
+                <TableCell className="text-green-600">{log.newJobs}</TableCell>
+                <TableCell className="text-blue-600">
+                  {log.updatedJobs}
+                </TableCell>
+                <TableCell className="text-red-600">{log.failedJobs}</TableCell>
+                <TableCell>
+                  {new Date(log.createdAt).toLocaleString()}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
 
       <div className="flex justify-between">
         <Button disabled={page === 1} onClick={() => fetchLogs(page - 1)}>
